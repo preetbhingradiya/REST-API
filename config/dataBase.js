@@ -1,0 +1,8 @@
+const mongoose=require("mongoose")
+
+const connect=async()=>{
+    await mongoose.connect(process.env.DB_URL,{useNewUrlParser:true})
+    console.log("connect to the DB")
+}
+
+module.exports=connect
