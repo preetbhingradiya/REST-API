@@ -3,6 +3,8 @@ const dotenv=require("dotenv")
 const helmet=require("helmet")
 const morgan=require("morgan")
 const connect = require('./config/dataBase')
+const userRoute = require('./routes/user')
+const authUserRoute = require('./routes/auth')
 
 
 const app=express()
@@ -11,6 +13,11 @@ app.use(express.json())
 app.use(helmet())
 app.use(morgan("common"))
 dotenv.config()
+
+
+app.use("/api/user",userRoute)
+app.use("/api/user/auth",authUserRoute)
+
 
 app.get('/',(req,res)=>{
     res.send("chi")
