@@ -33,6 +33,22 @@ const UserSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    desc:{
+      type:String,
+      max:30
+    },
+    city:{
+      type:String,
+      default:"Surat"
+    },
+    form:{
+      type:String,
+      max:30
+    },
+    relationship:{
+      type:Number,
+      enum:[1,2,3]
+    },
     createAt:{
       type:Date,
       default:Date.now()
