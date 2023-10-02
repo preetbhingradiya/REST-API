@@ -5,6 +5,7 @@ const morgan=require("morgan")
 const connect = require('./config/dataBase')
 const userRoute = require('./routes/user')
 const authUserRoute = require('./routes/auth')
+const PostRoute = require('./routes/posts')
 
 
 const app=express()
@@ -17,6 +18,7 @@ dotenv.config()
 
 app.use("/api/user",userRoute)
 app.use("/api/user/auth",authUserRoute)
+app.use("/api/post",PostRoute)
 
 
 app.get('/',(req,res)=>{
